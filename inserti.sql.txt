@@ -1,0 +1,14 @@
+INSERT INTO Korisnik (id, ime, prezime, email, lozinka, uloga, detaljiProfila)
+VALUES
+    (1, 'Pero', 'Perić', 'pero@example.com', 'password123', 'korisnik', 'Detalji za Johna'),
+    (2, 'Ana', 'Anić', 'ana@example.com', 'sigurnalozinka', 'administrator', 'Detalji za Jane');
+
+INSERT INTO Lekcija (id, idUčitelja, datumVrijemeOdržavanja, lokacija)
+VALUES
+    (101, 1, '2024-08-16 10:00:00', 'Učionica A'),
+    (102, 2, '2024-08-17 14:30:00', 'Online sastanak');
+
+INSERT INTO Recept (id, naziv, opis, vrstaKuhinje, idLekcije)
+VALUES
+    (1001, 'Pasta Carbonara', 'Klasično talijansko jelo', 'Talijanska', 101),
+    (1002, 'Veganski Curry', 'Začinjeno i ukusno', 'Indijska', 102);

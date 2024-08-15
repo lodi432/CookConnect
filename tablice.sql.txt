@@ -1,0 +1,28 @@
+CREATE TABLE Korisnik (
+    id INT PRIMARY KEY,
+    ime VARCHAR(50),
+    prezime VARCHAR(50),
+    email VARCHAR(100),
+    lozinka VARCHAR(100),
+    uloga VARCHAR(50),
+    detaljiProfila TEXT
+);
+
+-- Tablica za Lekcija
+CREATE TABLE Lekcija (
+    id INT PRIMARY KEY,
+    idUčitelja INT,
+    datumVrijemeOdržavanja DATETIME,
+    lokacija VARCHAR(100),
+    FOREIGN KEY (idUčitelja) REFERENCES Korisnik(id)
+);
+
+-- Tablica za Recept
+CREATE TABLE Recept (
+    id INT PRIMARY KEY,
+    naziv VARCHAR(100),
+    opis TEXT,
+    vrstaKuhinje VARCHAR(50),
+    idLekcije INT,
+    FOREIGN KEY (idLekcije) REFERENCES Lekcija(id)
+);
